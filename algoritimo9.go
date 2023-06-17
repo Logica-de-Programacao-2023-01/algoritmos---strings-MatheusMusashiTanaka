@@ -1,17 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 
-	Array := [6]float64{1.0, 2.0, 3.0, 4.0, 5.0, 6.0}
+	var str, cha, cha2 string
 
-	var num float64
-	fmt.Print("Informe um número para repor todas as posições do Array: ")
-	fmt.Scanln(&num)
+	fmt.Print("Digite uma string: ")
+	fmt.Scanln(&str)
+	fmt.Print("Digite o caractere que deseja alterar: ")
+	fmt.Scanln(&cha)
+	fmt.Print("Digite o caractere que deseja colocar no lugar desse: ")
+	fmt.Scanln(&cha2)
 
-	for i := 0; i < len(Array); i++ {
-		Array[i] = num
-	}
-	fmt.Println("Slice atual:", Array)
+	substituir := strings.Replace(str, cha, cha2, -1)
+
+	fmt.Printf("%s fica %s", str, substituir)
+
 }
