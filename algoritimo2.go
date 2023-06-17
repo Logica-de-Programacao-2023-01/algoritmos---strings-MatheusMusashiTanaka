@@ -1,12 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-	numeros := []int{1, 2, 3, 4, 5}
-	fmt.Println(numeros)
-
-	numeros = append(numeros[:2], numeros[3:]...)
-	fmt.Println(numeros)
-
+	var nome string
+	fmt.Println("Escreva uma frase: ")
+	fmt.Scan(&nome)
+	saida := strings.ReplaceAll(nome, " ", "")
+	fmt.Println("String sem espaço em branco: ", saida)
 }
