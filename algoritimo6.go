@@ -1,27 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 func main() {
-	array := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	scanner := bufio.NewScanner(os.Stdin)
 
-	var num int
-
-	fmt.Print("Digite um número: ")
-	fmt.Scanln(&num)
-
-	encontrado := false
-	for _, valor := range array {
-
-		if num == valor {
-			encontrado = true
-			break
-		}
-	}
-	if encontrado {
-		fmt.Print("O seu número pertence a Array!")
-	} else {
-		fmt.Print("O seu número não pertence a Array!")
-	}
-
+	fmt.Println("Digite uma frase ")
+	scanner.Scan()
+	frase1 := scanner.Text()
+	fmt.Println(strings.Count(frase1, " ") + 1)
 }
