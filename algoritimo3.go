@@ -1,13 +1,19 @@
 package main
-import "fmt"
+
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-  array := [4]float64{2.6,8.4,20.2,14.5}
-  var multiplicacao float64
-  
-  for _, x := range array {
-      multiplicacao = multiplicacao * x
-  }
-  produto := multiplicacao * float64(len(array))
-  fmt.Println("O produto de 2.6, 8.4, 20.2, 14.5 é", produto)
+	var s, s1, s2 string
+	fmt.Print("Digite uma string: ")
+	fmt.Scanln(&s)
+	fmt.Print("Digite o caractere a ser substituído: ")
+	fmt.Scanln(&s1)
+	fmt.Print("Digite o novo caractere: ")
+	fmt.Scanln(&s2)
+
+	saida := strings.ReplaceAll(s, s1, s2)
+	fmt.Printf("Nova string: %s\n", saida)
 }
