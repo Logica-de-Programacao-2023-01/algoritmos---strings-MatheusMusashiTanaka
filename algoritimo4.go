@@ -1,21 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	var slice []int
-	var soma, tamanho, x int
 
-	fmt.Print("Digite o tamanho do Slice: ")
-	fmt.Scan(&tamanho)
+	var sum string
+	var sdois string
+	fmt.Println("Digite duas strings")
+	fmt.Scan(&sum)
+	fmt.Scan(&sdois)
 
-	for i := 0; i < tamanho; i++ {
-		fmt.Print("Digite um número: ")
-		fmt.Scan(&x)
-		slice = append(slice, x)
-		soma = soma + x
+	if sum == sdois {
+		fmt.Println("As strings são iguais")
+	} else {
+		fmt.Println("As strings são diferentes")
 	}
 
-	fmt.Println(slice)
-	fmt.Println(soma)
 }
