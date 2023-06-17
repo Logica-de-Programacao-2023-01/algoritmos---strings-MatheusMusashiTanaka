@@ -1,21 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode"
+)
 
 func main() {
+	var str string
 
-	slice := []string{"a", "a", "b", "c", "d", "a", "ab", "c"}
-	var valor string
-	fmt.Print("Digite um valor: ")
-	fmt.Scan(&valor)
+	fmt.Println("Informe a string:")
+	fmt.Scan(&str)
 
-	var resultado []string
+	contemNumero := false
 
-	for _, x := range slice {
-		if x != valor {
-			resultado = append(resultado, x)
+	for _, r := range str {
+		if unicode.IsDigit(r) {
+			contemNumero = true
+			break
 		}
 	}
-
-	fmt.Println(resultado)
+	if contemNumero {
+		fmt.Println("A string contem pelo menos um numero!")
+	} else {
+		fmt.Println("A string não contem nenhum numero!")
+	}
 }
